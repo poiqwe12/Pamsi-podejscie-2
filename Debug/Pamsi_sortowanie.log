@@ -1,0 +1,6 @@
+﻿  Pamsi_sortowanie.cpp
+c:\users\łukasz głowacki\source\repos\pamsi_sortowanie\pamsi_sortowanie\nagłówek.h(63): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  Źródło.cpp
+c:\users\łukasz głowacki\source\repos\pamsi_sortowanie\pamsi_sortowanie\nagłówek.h(63): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  Generowanie kodu...
+  Pamsi_sortowanie.vcxproj -> C:\Users\Łukasz Głowacki\source\repos\Pamsi_sortowanie\Debug\Pamsi_sortowanie.exe
