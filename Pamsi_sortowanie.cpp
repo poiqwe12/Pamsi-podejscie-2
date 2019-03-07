@@ -4,16 +4,16 @@
 #include "pch.h"
 #include <iostream>
 #include "Nagłówek.h"
-#define ROZMIAR 100000
+#define ROZMIAR 10
 int main()
 {
     std::cout << "Hello World!\n"; 
 	Dane<int, ROZMIAR> D;
 	D.Inicjuj_losowo();
-	//std::cout << D << std::endl;
+	std::cout << D << std::endl;
 	std::cout << "Hello World!\n";
-	Dane<int, ROZMIAR> E = Sortowanie_bombelkowe(D,ROZMIAR);
-	//std::cout << E;
+	Dane<int, ROZMIAR> E = Sortowanie_wstawianie(D,ROZMIAR);
+	std::cout << E;
 	
 	return 0;
 }
