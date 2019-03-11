@@ -4,7 +4,7 @@
 #include "pch.h"
 #include <iostream>
 #include "Nagłówek.h"
-#define ROZMIAR 70
+#define ROZMIAR 170
 int main()
 {
     std::cout << "Hello World!\n"; 

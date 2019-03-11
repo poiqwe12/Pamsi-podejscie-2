@@ -23,8 +23,10 @@ public:
 
 
 };
+
+//Insertion sort
 template <typename Typ, int Wymiar>
-Dane<Typ, Wymiar> Sortowanie_wstawianie(Dane < Typ, Wymiar> D, unsigned int Wielkosc)
+Dane<Typ, Wymiar> Sortowanie_wstawianie(Dane < Typ, Wymiar> D, unsigned long Wielkosc)
 {
 	
 	Typ element;
@@ -53,9 +55,9 @@ Dane<Typ, Wymiar> Sortowanie_wstawianie(Dane < Typ, Wymiar> D, unsigned int Wiel
 	return D;
 
 }
-
+//buble sort
 template <typename Typ, int Wymiar>
-Dane<Typ, Wymiar> Sortowanie_bombelkowe(Dane < Typ, Wymiar> D, unsigned int Wielkosc)
+Dane<Typ, Wymiar> Sortowanie_bombelkowe(Dane < Typ, Wymiar> D, unsigned long Wielkosc)
 {
 	unsigned long  przesunie_ciekonca = 0;
 	bool zmiana = 1;
@@ -77,7 +79,7 @@ Dane<Typ, Wymiar> Sortowanie_bombelkowe(Dane < Typ, Wymiar> D, unsigned int Wiel
 	}
 	return D;
 }
-
+//Wyswietlanie
 template <typename Typ, int Wymiar>
 std::ostream& operator << (std::ostream &Strm, const Dane<Typ, Wymiar> &D)
 {
@@ -87,6 +89,7 @@ std::ostream& operator << (std::ostream &Strm, const Dane<Typ, Wymiar> &D)
 	}
 	return Strm;
 }
+//Inicjacja tablicy od max do min
 template<typename Typ, int Wymiar>
 void Dane<Typ, Wymiar>::Inicjuj_losowo()
 {
@@ -97,7 +100,13 @@ void Dane<Typ, Wymiar>::Inicjuj_losowo()
 		i = a--;
 	}
 }
+//heap sort
+template<typename Typ,int Wymiar>
+Dane<Typ, Wymiar> Sortowanie_kopcowanie(Dane <Typ, Wymiar> D, unsigned long Wielkosc)
+{
 
+	return D;
+}
 
 
 #endif
