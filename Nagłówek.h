@@ -24,39 +24,45 @@ public:
 
 };
 template <typename Typ, int Wymiar>
-Dane<Typ, Wymiar> Sortowanie_wstawianie(Dane < Typ, Wymiar> &D, unsigned int Wielkosc)
+Dane<Typ, Wymiar> Sortowanie_wstawianie(Dane < Typ, Wymiar> D, unsigned int Wielkosc)
 {
 	
-	Typ Element;
-	unsigned long p=0;
-	unsigned long j=0;
-
+	Typ element;
+	unsigned long j;
 	for (unsigned long i = 1; i < Wielkosc; ++i)
 	{
-		Element = D[i];
-		j = i - 1;
-		while ((j>=0)&&(D[j]>Element))
+		element = D[i];
+		j = i-1;
+		while ((j>=0)&&(D[j]>element))
 		{
 			D[j + 1] = D[j];
-			--j;
-			std::cout << D << std::endl;
+			if (j) {
+				j--;
+			}
+			else
+			{
+				break;
+			}
 		}
-		D[j + 1] = Element;
+		D[j] = element;
+		//std::cout << D << std::endl << std::endl;
 	}
+
+
+
 	return D;
 
 }
 
 template <typename Typ, int Wymiar>
-Dane<Typ, Wymiar> Sortowanie_bombelkowe(Dane < Typ, Wymiar> &D, unsigned int Wielkosc)
+Dane<Typ, Wymiar> Sortowanie_bombelkowe(Dane < Typ, Wymiar> D, unsigned int Wielkosc)
 {
 	unsigned long  przesunie_ciekonca = 0;
 	bool zmiana = 1;
 	Typ Wiekszy;
 	while (zmiana)
 	{
-		zmiana = 0;
-		++przesunie_ciekonca;
+		zmiana = 0;	
 		for (unsigned int i = Wielkosc - 1; i > przesunie_ciekonca; --i)
 		{
 			if (D[i] < D[i - 1])
@@ -67,6 +73,7 @@ Dane<Typ, Wymiar> Sortowanie_bombelkowe(Dane < Typ, Wymiar> &D, unsigned int Wie
 				D[i] = Wiekszy;
 			}
 		}
+		++przesunie_ciekonca;
 	}
 	return D;
 }
@@ -84,9 +91,10 @@ template<typename Typ, int Wymiar>
 void Dane<Typ, Wymiar>::Inicjuj_losowo()
 {
 	srand(time(0));
+	unsigned long a = Wymiar;
 	for (Typ &i : tab)
 	{
-		i = rand();
+		i = a--;
 	}
 }
 
